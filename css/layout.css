@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+*{
+	font: 100%
+}
+
+header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #3D415B;
+	height: 30vh;
+}
+header h1{
+	color: #FFF;
+	font-family: 'Sacramento', cursive;
+	font-size: 6rem;
+	margin:0;
+}
+
+/*.container{
+	width: 700px !important;
+}*/
+section#itens ul{
+	padding: 0 !important;
+	list-style: none;
+	width: 100%;
+}
+section#itens ul li{
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+li.marcado{
+	text-decoration: line-through;
+	background-color: rgb(255,100,100);
+}
+
+/*form#formAdd{
+	display: none;
+}*/
+
+div.mensagem-retorno > p{
+	border-radius: 10px;
+	padding: 10px;
+	background-color: rgba(255, 100, 100, .5);
+}
