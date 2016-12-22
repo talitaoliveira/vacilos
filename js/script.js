@@ -1,38 +1,15 @@
 $( document ).ready(function() {
 
-	$("#formulario").submit(function(e){
-		e.preventDefault();
-		var dados_form = $("form").serialize();
-		console.log(dados_form);
-		console.log("oola");
+	var url = window.location.href;
 
+	$("#conteudo").load("paginas/login/login.php");
 
-		$.ajax({
-			method: "POST",
-			url: "classes/tratamento.php",
-			data: dados_form,
-			dataType: 'json',
-		}).done(function(retorno) {
-			if(retorno.status == true){
-				$("#mensagem").html(retorno.mensagem);
-				$("#lista").prepend('<li>'+$("#descricao_vacilo").val()+'</li>');
-			}else{
-				$("#mensagem").html("nao foi");
-			}
-		},'json');
-
-
-	});
-
-	$("#lista").click(function(e){
-		e.preventDefault();
-		e.target.classList.toggle('marcado');
-	});
-		
-
-	$("#recuperar-vacilos").click(function(e){
-		e.preventDefault();
-		e.target.classList.toggle('marcado');
-	});
+	if(window.location.href == BASE + '/vacilos'){
+		$("#conteudo").load(BASE + "/vacilos/paginas/login/login.php");
+	}else if(window.location.href == BASE + '/vacilos/?cadastrar'){
+		$("#conteudo").load(BASE + "/vacilos/paginas/cadastrar/cadastrar.php");
+	}else if(window.location.href == BASE + '/vacilos/?listagem'){
+		$("#conteudo").load("principal.php");
+	}
 
 });
